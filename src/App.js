@@ -14,9 +14,9 @@ firebase.initializeApp({
 export default function App() {
   return (
     <div className="container mx-auto mt-8">
-      <div className="flex justify-center">
-        <img src="logo.jpg" alt="logo" width="250" height="300" />
-      </div>
+      <center>
+        <img src="logo.jpg" alt="logo" width="250" />
+      </center>
       <Router>
         <Switch>
           <Route exact path="/" component={Index} />
