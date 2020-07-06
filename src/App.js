@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Index from "./pages/index";
 import Add from "./pages/add";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
 require("dotenv").config();
 
 firebase.initializeApp({

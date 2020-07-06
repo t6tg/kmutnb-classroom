@@ -1,13 +1,11 @@
 import React from "react";
 import StudentCard from "../components/StudentCard";
-import CodeList from "../components/CodeList";
 import AddButton from "../components/AddButton";
 
 export default function Index() {
   return (
     <div>
       <StudentCard />
-      <CodeList />
       <AddButton />
       <p className="text-sm text-center p-4">
         เว็บไซต์นี้ มิได้มีส่วนเกี่ยวข้องกับทางมหาวิทยาลัยโดยตรง
