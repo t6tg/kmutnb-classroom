@@ -1,12 +1,15 @@
 import React from "react";
-import StudentCard from "./components/StudentCard";
-import CodeList from "./components/CodeList";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Index from "./pages/index";
+import Add from "./pages/add";
 
 export default function App() {
   return (
-    <div className="container mx-auto mt-8">
-      <StudentCard />
-      <CodeList />
-    </div>
+    <Router>
+      <Switch>
+        <Route exect={true} path="/" component={Index} />
+        <Route exect={true} path="/add" component={Add} />
+      </Switch>
+    </Router>
   );
 }
