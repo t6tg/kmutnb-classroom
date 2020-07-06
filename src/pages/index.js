@@ -13,7 +13,10 @@ export default function Index() {
         <br />
         อีกทั้งขอความกรุณาไม่นำข้อมูลอันเป็นเท็จลงสู่ระบบคอมพิวเตอร์
         <br />
-        ติดต่อ : support@thanawatgulati.com
+        ติดต่อ :{" "}
+        <a href="mailto:support@thanawatgulati.com">
+          support@thanawatgulati.com
+        </a>
       </p>
     </div>
   );
