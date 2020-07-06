@@ -3,9 +3,6 @@ import React from "react";
 export default function StudentCard() {
   return (
     <div>
-      <div className="flex justify-center">
-        <img src="logo.jpg" alt="logo" width="250" />
-      </div>
       <div className="flex justify-center p-4">
         <input
           className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 w-full block appearance-none leading-normal shadow-lg"

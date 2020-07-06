@@ -3,7 +3,7 @@ import AddForm from "../components/AddForm";
 
 export default function Add() {
   return (
-    <div>
+    <div className="p-4">
       <AddForm />
     </div>
   );
