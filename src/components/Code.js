@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Code(props) {
   return (
-    <div className="p-4 mt-4">
+    <div className="p-4">
       {props.data.map((r) => (
         <div className="w-full shadow-xl grid grid-cols-2 border border-gray-700 rounded-lg p-2 mt-2">
           <div>
