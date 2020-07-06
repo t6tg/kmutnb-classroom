@@ -14,6 +14,10 @@ export default class StudentCard extends Component {
           subjectRef.onSnapshot((doc) => {
             this.setState({ data: doc.data() });
           });
+        } else {
+          alert(
+            "ไม่พบรหัสวิชานี้ในระบบค้นหาของเรา อาจเป็นไปได้ว่า อาจารย์ประจำวิชายังไม่ได้ลงทะเบียนในระบบนี้"
+          );
         }
       });
     } catch (error) {
