@@ -6,7 +6,6 @@ export default function Code(props) {
       {props.data.map((r) => (
         <div className="w-full shadow-xl grid grid-cols-2 border border-gray-700 rounded-lg p-2 mt-2">
           <div>
-            {console.log(r)}
             <h1 className="text-xl">
               วิชา : <b>{r.SName}</b>
             </h1>
