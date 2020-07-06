@@ -4,7 +4,7 @@ import Code from "./Code";
 import "firebase/firestore";
 
 export default class StudentCard extends Component {
-  state = { UID: "", data: {} };
+  state = { UID: "", data: null };
   getData = () => {
     const db = firebase.firestore();
     try {
@@ -40,7 +40,7 @@ export default class StudentCard extends Component {
             ค้นหา
           </button>
         </div>
-        <Code {...this.state.data} />
+        {this.state.data !== null && <Code {...this.state.data} />}
       </div>
     );
   }

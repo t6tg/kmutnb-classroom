@@ -4,8 +4,16 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 export default class AddForm extends Component {
-  state = { SName: "", SID: "", SDepart: "", Classroom: "", section: "" };
+  state = {
+    SName: "",
+    SID: "",
+    SDepart: "",
+    Classroom: "",
+    section: "",
+    change: true,
+  };
   AddData = () => {
+    const data = [];
     if (
       this.state.SName === "" ||
       this.state.SID === "" ||
@@ -18,21 +26,54 @@ export default class AddForm extends Component {
     document.querySelector("#submit").innerHTML = "Loading....";
     const db = firebase.firestore();
     const subjectRef = db.collection("subject").doc(`${this.state.SID}`);
-    subjectRef
-      .set({
-        SName: this.state.SName,
-        SID: this.state.SID,
-        SDepart: this.state.SDepart,
-        Classroom: this.state.Classroom,
-        Section: this.state.section,
-      })
-      .then(function () {
-        alert("ลงทะเบียนสำเร็จ");
-        window.location.href = "/";
-      })
-      .catch(function (error) {
-        console.log(`เกิดข้อผิดพลาด ${error}`);
-      });
+    subjectRef.get().then((docSnapshot) => {
+      if (docSnapshot.exists) {
+        subjectRef.onSnapshot((doc) => {
+          doc.data().data.map((r) => data.push(r));
+          data.push({
+            SName: this.state.SName,
+            SID: this.state.SID,
+            SDepart: this.state.SDepart,
+            Classroom: this.state.Classroom,
+            Section: this.state.section,
+          });
+          if (this.state.change) {
+            subjectRef
+              .set({
+                data: data,
+              })
+              .then(function () {
+                alert("ลงทะเบียนสำเร็จ");
+                window.location.href = "/";
+              })
+              .catch(function (error) {
+                console.log(`เกิดข้อผิดพลาด ${error}`);
+              });
+          }
+          this.setState({ change: false });
+        });
+      } else {
+        subjectRef
+          .set({
+            data: [
+              {
+                SName: this.state.SName,
+                SID: this.state.SID,
+                SDepart: this.state.SDepart,
+                Classroom: this.state.Classroom,
+                Section: this.state.section,
+              },
+            ],
+          })
+          .then(function () {
+            alert("ลงทะเบียนสำเร็จ");
+            window.location.href = "/";
+          })
+          .catch(function (error) {
+            console.log(`เกิดข้อผิดพลาด ${error}`);
+          });
+      }
+    });
   };
 
   render() {
