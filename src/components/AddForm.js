@@ -98,7 +98,7 @@ export default class AddForm extends Component {
           />
         </div>
         <div>
-          <label>ตัวย่อสาขา :</label>
+          <label>ตัวย่อสาขาที่สามรถเข้าร่วมได้ :</label>
           <input
             className="border border-gray-400 p-2 w-full"
             type="text"
