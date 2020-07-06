@@ -126,7 +126,7 @@ export default class AddForm extends Component {
         </div>
         <p className="text-red-800 text-center">
           หากในวิชานี้มีการสอนหลายภาควิชา ให้เพิ่มตามจำนวนครั้งที่มี Sec
-          ที่เปิดโดยการเปลียน ที่รหัสสาขา
+          ที่เปิดโดยการเปลียน ที่ตัวย่อสาขา
         </p>
         <button
           id="submit"
