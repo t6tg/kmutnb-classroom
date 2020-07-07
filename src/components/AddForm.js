@@ -116,7 +116,7 @@ export default class AddForm extends Component {
           />
         </div>
         <div>
-          <label>รหัส Classroom</label>
+          <label>รหัสเข้าร่วม Google Classroom</label>
           <input
             className="border border-gray-400 p-2 w-full"
             type="text"
